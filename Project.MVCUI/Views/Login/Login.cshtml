@@ -1,0 +1,23 @@
+﻿@using Project.MVCUI.ViewModels
+@model AppUserVM
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container">
+    <div class="panel panel-body">
+        @using (Html.BeginForm())
+        {
+                <div>@Html.TextBoxFor(x => x.AppUser.UserName, new { placeholder = "kullanıcı adını giriniz", @class = "form-control" })</div>
+                <div>@Html.PasswordFor(x => x.AppUser.Password, new { placeholder = "Sifre giriniz",@class ="form control"})</div>
+                <div>
+                    <button class="btn btn-primary">
+                        Login
+                    </button>
+                </div>
+            }
+
+    </div>
+</div>
+
