@@ -16,6 +16,7 @@ namespace Project.MVCUI.Controllers
         public LoginController()
         {
             _appUserRep = new AppUserRepository();
+            
         }
     
         public ActionResult Login()
@@ -32,6 +33,7 @@ namespace Project.MVCUI.Controllers
                 if (ap.UserRole == Project.ENTITIES.Models.Enums.UserRole.Admin)
                 {
                     Session["admin"] = ap;
+                    //Session["AdminName"] = ap.Name;
                     return RedirectToAction("AdminPanel", "Panel");
                 }
                 ViewBag.Message = "Yetkiniz Admin Değil";

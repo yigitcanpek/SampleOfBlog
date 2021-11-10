@@ -1,0 +1,27 @@
+﻿@model PostVM
+@{
+    ViewBag.Title = "AddPost";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBoxFor(x => x.PostInstance.Title, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.PostInstance.TitleDescription, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.PostInstance.Description, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.TextBoxFor(x=> x.PostInstance.AppUser.Name,new {@clas = "form-control" })
+    </div>
+  
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}
+

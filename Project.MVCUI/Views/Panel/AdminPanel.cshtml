@@ -1,7 +1,35 @@
-﻿
+﻿@model PostVM
 @{
     ViewBag.Title = "AdminPanel";
 }
+<div class="jumbotron"> Yeni Bir Post Eklemek İçin  @Html.ActionLink("Tıklayınız","AddPost")
+    </div>
 
-<h2>AdminPanel</h2>
+<div class="panel panel-primary">
+    <div class="panel panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Post Ismi</th>
+                    <th>Post Başlık Açıklama </th>
+                    <th>Yazar</th>
+                    <th colspan="2" style="padding-left:100px">Islemler</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach(Post item in Model.Posts)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.TitleDescription</td>
+                    <td>@item.AppUser.Name</td>
+                    <td>@Html.ActionLink("Posta Git","GoToPost",new { id = item.ID}, new {@class ="btn btn-warning" })</td>
+                </tr>
+            }
+            </tbody>
+
+        </table>
+    </div>
+</div>
 

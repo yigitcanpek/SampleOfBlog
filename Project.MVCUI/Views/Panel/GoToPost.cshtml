@@ -1,0 +1,25 @@
+﻿@model PostVM
+@{
+    ViewBag.Title = "GoToPost";
+}
+@Html.HiddenFor(x=> x.PostInstance.ID)
+    <div>
+    @Html.TextBoxFor(x => x.PostInstance.Title)
+    </div>
+    <div> 
+        @Html.TextBoxFor(x => x.PostInstance.TitleDescription)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.PostInstance.AppUser.Name )
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.PostInstance.Description)
+    </div>
+<div>
+    @Html.ActionLink("Güncelle","UpdatePost",new { id = Model.PostInstance.ID }, new { @class = "btn btn-warning" })
+</div>
+<div>
+    @Html.ActionLink("Sil", "DeletePost",new {id = Model.PostInstance.ID }, new {@class ="btn btn-warning"})
+</div>
+
+
