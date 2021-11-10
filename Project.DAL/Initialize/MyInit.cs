@@ -9,16 +9,29 @@ using System.Threading.Tasks;
 
 namespace Project.DAL.Initialize
 {
-    public class MyInit:DropCreateDatabaseIfModelChanges<MyContext>
+    public class MyInit: CreateDatabaseIfNotExists<MyContext>
     {
         public override void InitializeDatabase(MyContext context)
         {
-            AppUser ap = new AppUser
+            AppUser kadir = new AppUser
             {
-                UserName = "Admin",
-                Password = "123"
+                UserName = "Legolas",
+                Name = "Kadir",
+                Surname = "Şöför",
+                Password = "Arwen34",
+                UserRole = Project.ENTITIES.Models.Enums.UserRole.Admin
             };
-            context.AppUsers.Add(ap);
+
+            AppUser yigit = new AppUser
+            {
+                UserName = "Gimli",
+                Name = "Yiğit Can",
+                Surname = "Pekgüzel",
+                Password = "Arwen44",
+                UserRole = Project.ENTITIES.Models.Enums.UserRole.Admin
+            };
+            context.AppUsers.Add(kadir);
+            context.AppUsers.Add(yigit);
             context.SaveChanges();
         }
         
