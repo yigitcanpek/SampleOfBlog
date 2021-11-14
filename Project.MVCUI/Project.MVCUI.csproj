@@ -178,6 +178,7 @@
     <Content Include="Views\Panel\AdminPanel.cshtml" />
     <Content Include="Views\Panel\GoToPost.cshtml" />
     <Content Include="Views\Panel\AddPost.cshtml" />
+    <Content Include="Views\Panel\UpdatePost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

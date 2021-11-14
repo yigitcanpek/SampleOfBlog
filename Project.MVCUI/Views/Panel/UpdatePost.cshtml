@@ -1,0 +1,23 @@
+﻿@model PostVM
+@{
+    ViewBag.Title = "UpdatePost";
+}
+
+@using (Html.BeginForm())
+ {
+     @Html.HiddenFor(x=> x.PostInstance.ID)
+    <div>
+        @Html.TextBoxFor(x=> x.PostInstance.Title,new {@class = "form-control"})
+    </div>
+    <div>
+        @Html.TextBoxFor(x=> x.PostInstance.TitleDescription, new {@class ="form-control"})
+    </div>
+
+    <div>@Html.TextBoxFor(x=> x.PostInstance.Description,new {@class ="form-control" })
+    </div>
+    <button class="btn btn-primary">
+        güncelle
+    </button>
+ }
+
+

@@ -30,7 +30,7 @@ namespace Project.MVCUI.Controllers
             };
             return View(pvm);
         }
-        
+        [AdminAuthentication]
         public ActionResult GoToPost(int id)
         {
             PostVM pvm = new PostVM()
@@ -40,7 +40,7 @@ namespace Project.MVCUI.Controllers
             };
             return View(pvm);
         }
-
+        [AdminAuthentication]
         public ActionResult AddPost(Post PostInstance)
         {
             
@@ -48,24 +48,48 @@ namespace Project.MVCUI.Controllers
         }
 
         [HttpPost]
+        [AdminAuthentication]
         public ActionResult Addpost(Post PostInstance)
         {
             
             _postRep.Add(PostInstance);
             return RedirectToAction("AdminPanel");
         }
-
+        [AdminAuthentication]
         public ActionResult DeletePost (int id)
         {
             _postRep.Destroy(_postRep.Find(id));
             return RedirectToAction("AdminPanel");
         }
 
-        [HttpPost]
-        public ActionResult UpdatePost (int id)
+       public ActionResult UpdatePost(int id )
         {
-            _postRep.Update(_postRep.Find(id));
+            PostVM pvm = new PostVM()
+            {
+                PostInstance = _postRep.Find(id)
+            };
+            return View(pvm);
+        }
+        
+        [AdminAuthentication]
+        [HttpPost]
+        public ActionResult UpdatePost (Post postInstance)
+        {
+            _postRep.Update(postInstance);
             return RedirectToAction("AdminPanel");
         }
+
+        //[HttpPost]
+        //[AdminAuthentication]
+        //public ActionResult UpdatePost(int id)
+        //{
+        //    _postRep.Update(_postRep.Find(id));
+        //    return RedirectToAction("AdminPanel");
+        //}
     }
 }
+
+
+
+
+
