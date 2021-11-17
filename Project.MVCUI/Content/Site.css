@@ -24,8 +24,16 @@ body {
 .flow-div{
     background-color:lightcoral;
 }
-.search-bar > form{
+
+.right-widgets{
+    
+}
+
+.search-bar{
     width:100%;
+}
+.search-bar > form{
+
     height: 40px;
     background-color: white;
 }
@@ -33,6 +41,7 @@ body {
     border: none;
     padding: 10px;
     font-size:14px;
+    
 }
 .search-bar > form > input:focus {
     outline: none;
@@ -45,15 +54,20 @@ body {
     width: 45px;
 }
 
+
+/*--------- About Widget ---------*/
+
 .about-widget{
-    display:flex;
-    flex-direction:column;
+
+ 
     align-items:center;
 
     padding:30px 30px 15px 30px;
     margin-top:30px;
     background-color: white;
-    height:300px;
+    
+
+
 }
 .about-me {
     display: flex;
@@ -66,10 +80,34 @@ body {
 }
 .about-widget > img{
     margin: 0 auto;
-    
 }
 
 
+
+/*--------- Social Widget ---------*/
+
+.social-container > a {
+    border-radius: 50% !important;
+    background-color: #aba7a7;
+    border: none;
+
+}
+.social-container > a:hover {
+
+    background-color: #918e8e;
+
+}
+.social-container > a, .social-container > a > i {
+    
+}
+.social-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px 50px 15px;
+    margin-top: 30px;
+    background-color: white;
+}
 
 
 /* Set padding to keep content from hitting the edges */
@@ -90,4 +128,10 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .btn {
+        padding: 8px 12px 8px 12px;
+    }
 }
