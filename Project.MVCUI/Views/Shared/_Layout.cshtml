@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="social-widget">
-                        <h4>Beni Takip Et!</h4>
+                        <h3>Beni Takip Et!</h3>
                         <div class="social-container">
                             <a class=" btn btn-primary btn-lg btn-floating"
                                href="#!"
@@ -88,8 +88,18 @@
                                role="button">
                                 <i class="fab fa-twitter"></i>
                             </a>
-
                         </div>
+                    </div>
+
+                    <div class="latest-widget">
+                        <h3>Latest Posts</h3>
+                        <ul>
+                            <li><a href="#">Why You're </a></li>
+                            <li><a href="#">Where to Find Guest Blogging Opportunities on Web 3.0 </a></li>
+                            <li><a href="#">8How to Explain Web 3.0 to Your Mom</a></li>
+                            <li><a href="#">20 Fun Facts About Web 3.0</a></li>
+                            <li><a href="#">910 Things You Learned in Kindergarden That'll Help You With Web 3.0</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -109,5 +119,26 @@
     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.0/umd/react.development.js"></script>
     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.0/umd/react-dom.development.js"></script>
     <script src="@Url.Content("~/Scripts/Js/App.jsx")"></script>>
+    <script>
+        var x, i;
+        x = document.querySelectorAll('div.latest-widget > ul > li ');
+        y = document.querySelectorAll('div.latest-widget > ul > li > a');
+
+        function mouseOver() {
+            event.target.classList.add("link-hover");
+        }
+        function mouseOut() {
+            event.target.classList.remove("link-hover");
+        }
+
+        for (i = 0; i < x.length; i++) {
+            y[i].addEventListener("mouseover", mouseOver);
+            y[i].addEventListener("mouseout", mouseOut);
+        }
+        
+        for (i = 0; i < x.length - 1; i++) {
+            x[i].style.borderBottom = "1px solid #e6e6e6";
+        }    
+    </script>
 </body>
 </html>
