@@ -10,26 +10,27 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+    <header class="header-wrapper">
+        <div class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!---  <ul class="nav navbar-nav">
+                      <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                      <li>@Html.ActionLink("About", "About", "Home")</li>
+                      <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul> -->
+                </div>
             </div>
         </div>
-
-    </div>
+    </header>
     <div class="container body-content">
 
         <div class="introduce-container">
@@ -101,15 +102,37 @@
                             <li><a href="#">910 Things You Learned in Kindergarden That'll Help You With Web 3.0</a></li>
                         </ul>
                     </div>
+
+                    <div class="categories-widget">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#">General </a> <span>(0)</span></li>
+                            <li><a href="#">Software</a> <span>(0)</span></li>
+                            <li><a href="#">Crypto Currencies</a> <span>(0)</span></li>
+                            <li><a href="#">Science</a> <span>(0)</span></li>
+                            <li><a href="#">Random </a> <span>(0)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="tag-widget">
+                        <h3>Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#">design</a>
+                            <a href="#">music</a>
+                            <a href="#">crypto</a>
+                            <a href="#">news</a>
+                            <a href="#">fun</a>
+                            <a href="#">game</a>
+                            <a href="#">random</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-
             <hr />
             <footer>
-            </footer>
-        
+            </footer> 
     </div>
 
 
@@ -119,26 +142,6 @@
     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.0/umd/react.development.js"></script>
     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.0/umd/react-dom.development.js"></script>
     <script src="@Url.Content("~/Scripts/Js/App.jsx")"></script>>
-    <script>
-        var x, i;
-        x = document.querySelectorAll('div.latest-widget > ul > li ');
-        y = document.querySelectorAll('div.latest-widget > ul > li > a');
-
-        function mouseOver() {
-            event.target.classList.add("link-hover");
-        }
-        function mouseOut() {
-            event.target.classList.remove("link-hover");
-        }
-
-        for (i = 0; i < x.length; i++) {
-            y[i].addEventListener("mouseover", mouseOver);
-            y[i].addEventListener("mouseout", mouseOut);
-        }
-        
-        for (i = 0; i < x.length - 1; i++) {
-            x[i].style.borderBottom = "1px solid #e6e6e6";
-        }    
-    </script>
+    <script src="~/Scripts/Js/script.js"></script>
 </body>
 </html>
