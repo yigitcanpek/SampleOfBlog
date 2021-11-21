@@ -5,7 +5,9 @@
     box-sizing: border-box;
     
 }
-
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: #f5f5f5;
@@ -24,7 +26,7 @@ body {
     margin-bottom: 100px;
 }
 .flow-div{
-    background-color:lightcoral;
+    
 }
 .search-bar{
     width:100%;
@@ -50,6 +52,72 @@ body {
     width: 45px;
 }
 
+/*--------- Post Flow ---------*/
+.post-main{
+    list-style:none;
+}
+.post-thumbnail > a > img{
+  width: 100%;
+  height: auto;
+}
+.post-header{
+    margin-top:0px;
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+.post-title {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.post-title > a {
+    
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    position:relative;
+}
+.post-title > a:hover {
+    text-decoration: none;
+    color: black;
+}
+.post-title > a.link-hover:after{
+    
+    box-sizing: border-box;
+    display: block;
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left:0;
+    animation: slide 0.5s forwards;
+    text-overflow: clip;
+    overflow:hidden;
+}
+.post-text {
+    width: 90%;
+    margin: 0 auto;
+}
+.post-text > p{
+    text-align:center;
+}
+.post-details{
+    background-color: white;
+}
+.post-last-details{
+    margin: 0 auto;
+    width:50%;
+    text-align:center;
+    padding-bottom:20px;
+}
+.post-send-time, .post-category{
+    display:inline-block;
+}
+.post-category > i > a{
+    text-decoration:none;
+    color:lightcoral;
+}
 
 /*--------- About Widget ---------*/
 
@@ -125,18 +193,18 @@ body {
         border-bottom: 1px solid #e6e6e6;
     }
 
-
-    .latest-widget > ul > li > a.link-hover:after, .categories-widget > ul > li > a.link-hover:after {
-        box-sizing: border-box;
-        display: block;
-        content: "";
-        width: 0;
-        height: 1px;
-        background-color: red;
-        position: absolute;
-        animation: slide 0.5s forwards;
-        text-overflow: clip;
-    }
+        
+        .latest-widget > ul > li > a.link-hover:after, .categories-widget > ul > li > a.link-hover:after {
+            box-sizing: border-box;
+            display: block;
+            content: "";
+            width: 0;
+            height: 1px;
+            background-color: red;
+            position: absolute;
+            animation: slide 0.5s forwards;
+            text-overflow: clip;
+        }
 
 .latest-widget > ul > li > a, .categories-widget > ul > li > a{
     display:inline-block;
@@ -153,6 +221,10 @@ body {
     margin-top: 30px;
     background-color: white;
 }
+.tag-widget > h3{
+margin-left:7px !important;
+}
+
 .tag-cloud > a {
     display: inline-block;
     position: relative;
@@ -165,6 +237,44 @@ body {
     background-color:cornsilk;
     transition: 0.5s;
 }
+
+/*--------- Footer  ---------*/
+
+
+.footer-social > a  {
+    padding: 10px 14px 10px 14px;
+    border-radius: 50%;
+    border:none;
+}
+.footer-social > a > i {
+
+    border: none;
+}
+.social-wrap{
+    padding:30px;
+}
+.gotop-container {
+    visibility:hidden;
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin: 30px;
+    z-index:20;
+    background-color: lightslategrey;
+    padding:12px 16px 12px 16px;
+    text-align:center;
+    border-radius: 150px;
+
+    transition: 0.2s;
+}
+.gotop-container:hover{
+    background-color:#ac9980;
+}
+.gotop-btn {
+    color:white;
+}
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
