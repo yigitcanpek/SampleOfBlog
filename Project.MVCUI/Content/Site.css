@@ -22,6 +22,7 @@ body {
     border: none;
 }
 .introduce-container {
+    padding:15px;
     margin-top: 50px;
     margin-bottom: 100px;
 }
@@ -82,7 +83,6 @@ body {
     color: black;
 }
 .post-title > a.link-hover:after{
-    
     box-sizing: border-box;
     display: block;
     content: "";
@@ -107,9 +107,13 @@ body {
 }
 .post-last-details{
     margin: 0 auto;
+    margin-top:40px !important;
     width:50%;
     text-align:center;
     padding-bottom:20px;
+}
+.post-last-details > div:last-child{
+    margin-left: 20px;
 }
 .post-send-time, .post-category{
     display:inline-block;
@@ -118,6 +122,7 @@ body {
     text-decoration:none;
     color:lightcoral;
 }
+
 
 /*--------- About Widget ---------*/
 
@@ -138,8 +143,6 @@ body {
 .about-widget > img{
     margin: 0 auto;
 }
-
-
 
 /*--------- Social Widget ---------*/
 .social-container > a {
@@ -310,3 +313,9 @@ textarea {
         width: 100%;
     }
 }
+@media only screen and (max-width: 992px) {
+    .search-bar{
+        margin-top:50px;
+    }
+}
+
