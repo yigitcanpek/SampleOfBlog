@@ -8,6 +8,7 @@ namespace Project.MVCUI.Tools
 {
     public class ImageUploader
     {
+        /*Needs to be refactoring*/
         public static string UploadImage(string serverPath,HttpPostedFileBase file)
         {
             if (file != null)

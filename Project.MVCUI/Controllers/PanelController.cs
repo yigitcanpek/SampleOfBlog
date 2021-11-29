@@ -53,14 +53,14 @@ namespace Project.MVCUI.Controllers
         [AdminAuthentication]
         public ActionResult Addpost(Post PostInstance, HttpPostedFileBase image)
         {
-            
+            /*Image Uploader can be converted to function */
             if (Request.Files.Count>0)
             {
-                string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
-                string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                string yol = "~/Images/" + dosyaadi + uzanti;
-                Request.Files[0].SaveAs(Server.MapPath(yol));
-                PostInstance.ImagePath = "/Images/" + dosyaadi + uzanti;
+                string filename = Path.GetFileName(Request.Files[0].FileName);
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string path = "~/Images/" + filename + extension;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                PostInstance.ImagePath = "/Images/" + filename + extension;
             }
                 
             
@@ -94,7 +94,7 @@ namespace Project.MVCUI.Controllers
         }
 
         
-
+        //Multiple submit button way !!
         //[HttpPost]
         //[AdminAuthentication]
         //public ActionResult UpdatePost(int id)
