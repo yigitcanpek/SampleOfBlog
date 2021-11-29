@@ -1,0 +1,62 @@
+[33mcommit 0dc7e2262de1c04ef6074e67e88cf71dd6fcbc7c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Kadir <kadirsofor@hotmail.com>
+Date:   Sun Nov 14 22:34:37 2021 +0300
+
+    Merge'süz push denemesi.
+
+[33mcommit c1bbd8292c552680a128938c440404ce4fe43d64[m
+Author: Yiğit Can Pekgüzel <yigitcanpekguzel@gmail.com>
+Date:   Sun Nov 14 21:52:24 2021 +0300
+
+    versiyon ayarlama
+
+[33mcommit 8fcea5409513a791e3ef5888765dc7f75a5086d8[m
+Author: Yiğit Can Pekgüzel <yigitcanpekguzel@gmail.com>
+Date:   Thu Nov 11 00:38:16 2021 +0300
+
+    Admin Paneli tarafında ki post crud işlemlerinin hepsi tamamlandı
+
+[33mcommit b1c9cac5719e770b0d1424dc49aa2c79b5515fac[m
+Merge: 35c3133 8cda1fb
+Author: Yiğit Can Pekgüzel <yigitcanpekguzel@gmail.com>
+Date:   Wed Nov 10 04:26:55 2021 +0300
+
+    Merge branch 'master' of https://github.com/yigitcanpek/SampleOfBlog
+
+[33mcommit 35c3133bf4ce1be85c0378e8d1ad7f9c8791357d[m
+Author: Yiğit Can Pekgüzel <yigitcanpekguzel@gmail.com>
+Date:   Wed Nov 10 03:13:51 2021 +0300
+
+    Authentication class'ı yazildi ve Authorize attirbute olarak admin controllerına eklendi. Intiliaze ayarları düzeltildi. User Login arayüzü oluşturuldu
+
+[33mcommit 8cda1fb579919499e2f2bb75c973acb490c0b0c6[m
+Author: Yiğit Can Pekgüzel <yigitcanpekguzel@gmail.com>
+Date:   Wed Nov 10 03:13:51 2021 +0300
+
+    Authentication class'ı yazıldı ve html attirbute olarak admin paneli bölümüne eklendi.
+    User login arayüzü oluşturuldu.
+    Initialize ayarları düzeltildi.
+
+[33mcommit 888f60b7d6add7a78e8416dff0049ae1fb9fdeea[m
+Author: Yiğit Can Pekgüzel <yigitcanpekguzel@gmail.com>
+Date:   Mon Nov 8 22:33:22 2021 +0300
+
+    Kadir Şöför
+
+[33mcommit 0f26cb5d8bf6977c1961d2a704dc15401eadb58e[m
+Author: Yiğit Can Pekgüzel <yigitcanpekguzel@gmail.com>
+Date:   Sun Nov 7 23:09:56 2021 +0300
+
+    Singleton ve GenericRepository Patternleri yazılmıştır
+
+[33mcommit 5db0034a3c79e6a564658c604e4d5e397b4b8417[m
+Author: yigitcanpek <yigitcanpekguzel@gmail.com>
+Date:   Thu Nov 4 14:06:16 2021 +0300
+
+    Add project files.
+
+[33mcommit 53a7b425c6091a0a35934137cbca3815c92a29a3[m
+Author: yigitcanpek <yigitcanpekguzel@gmail.com>
+Date:   Thu Nov 4 14:06:13 2021 +0300
+
+    Add .gitignore and .gitattributes.

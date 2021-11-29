@@ -12,7 +12,7 @@ namespace Project.ENTITIES.Models.Entities
         public string TitleDescription { get; set; }
         public string Description { get; set; }
         public int ReviewCount { get; set; }
-
+        public string ImagePath { get; set; }
         //Relational Properties
         public int? AppUserID { get; set; }
         public AppUser AppUser { get; set; }

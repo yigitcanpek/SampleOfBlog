@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project.BLL.DesignPatterns.Repository.ConcRep;
+using Project.MVCUI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,18 @@ namespace Project.MVCUI.Controllers
 {
     public class HomeController : Controller
     {
+        PostRepository _postrep;
+        public HomeController()
+        {
+            _postrep = new PostRepository();
+        }
         public ActionResult Index()
         {
-            return View();
+            PostVM pvm = new PostVM()
+            {
+                Posts = _postrep.GetActives()
+            };
+            return View(pvm);
         }
    
 

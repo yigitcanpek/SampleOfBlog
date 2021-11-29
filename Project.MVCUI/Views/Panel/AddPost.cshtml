@@ -3,7 +3,7 @@
     ViewBag.Title = "AddPost";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("AddPost","Panel",FormMethod.Post,new {enctype ="multipart/form-data"}))
 {
     <div>
         @Html.TextBoxFor(x => x.PostInstance.Title, new { @class = "form-control" })
@@ -15,6 +15,9 @@
         @Html.TextBoxFor(x => x.PostInstance.Description, new { @class = "form-control" })
     </div>
     
+    <div>
+        <input type="file" name="image" value="" />
+    </div>
   
     <div>
         <button class="btn btn-primary">
