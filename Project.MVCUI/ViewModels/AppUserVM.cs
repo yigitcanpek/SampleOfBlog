@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Project.MVCUI.ViewModels
 {
-    public class AppUserVM:BaseEntity
+    public class AppUserVM
     {
         public AppUser AppUser { get; set; }
         public List<AppUser> AppUsers { get; set; }

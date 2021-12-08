@@ -1,0 +1,21 @@
+﻿@model CategoryVM
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+@using (Html.BeginForm("AddCategory","Panel",FormMethod.Post, new {enctype="multipart/formdata" }))
+{
+    <div>
+        @Html.TextBoxFor(x => x.CategoryInstance.CategoryDescription, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.CategoryInstance.CategoryName, new { @class = "form-control" })
+    </div>
+    
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}
+

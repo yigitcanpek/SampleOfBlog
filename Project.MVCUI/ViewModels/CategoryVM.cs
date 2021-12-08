@@ -7,22 +7,11 @@ using System.Web;
 
 namespace Project.MVCUI.ViewModels
 {
-    public class PostVM
+    public class CategoryVM
     {
-        public Post PostInstance { get; set; }
         public List<Post> Posts { get; set; }
-        public List<AppUser> AppUsers { get; set; }
-        
         public List<Category> Categories { get; set; }
-        public List<PostTag> PostTags { get; set; }
-        
-
-
-
-
-
-
-
+        public Category CategoryInstance { get; set; }
 
     }
 }

@@ -53,8 +53,11 @@
   <ItemGroup>
     <Compile Include="Options\AppUserMap.cs" />
     <Compile Include="Options\BaseMap.cs" />
+    <Compile Include="Options\CategoryMap.cs" />
     <Compile Include="Options\PostMap.cs" />
+    <Compile Include="Options\PostTagMap.cs" />
     <Compile Include="Options\SuspectMap.cs" />
+    <Compile Include="Options\TagMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

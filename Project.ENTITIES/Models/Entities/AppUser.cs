@@ -17,6 +17,6 @@ namespace Project.ENTITIES.Models.Entities
         public UserRole UserRole { get; set; }
 
         //Relational Properties
-        public List<Post> Posts { get; set; }
+        public virtual List<Post> Posts { get; set; }
     }
 }

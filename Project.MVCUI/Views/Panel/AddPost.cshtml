@@ -14,7 +14,13 @@
     <div>
         @Html.TextBoxFor(x => x.PostInstance.Description, new { @class = "form-control" })
     </div>
-    
+    <div>
+        @if (Model.Categories != null)
+        {
+            @Html.DropDownListFor(x => x.PostInstance.CategoryID, new SelectList(Model.Categories, "ID", "CategoryName"), "Lutfen seciniz", new { @class = "form-control" })
+        }
+    </div>
+ 
     <div>
         <input type="file" name="image" value="" />
     </div>

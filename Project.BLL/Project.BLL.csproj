@@ -53,8 +53,11 @@
   <ItemGroup>
     <Compile Include="DesignPatterns\Repository\BaseRep\BaseRepository.cs" />
     <Compile Include="DesignPatterns\Repository\ConcRep\AppUserRepository.cs" />
+    <Compile Include="DesignPatterns\Repository\ConcRep\CategoryRepository.cs" />
     <Compile Include="DesignPatterns\Repository\ConcRep\PostRepository.cs" />
+    <Compile Include="DesignPatterns\Repository\ConcRep\PostTagRepository.cs" />
     <Compile Include="DesignPatterns\Repository\ConcRep\SuspectRepository.cs" />
+    <Compile Include="DesignPatterns\Repository\ConcRep\TagRepository.cs" />
     <Compile Include="DesignPatterns\Repository\IRep\IRepository.cs" />
     <Compile Include="DesignPatterns\Singleton\DBTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

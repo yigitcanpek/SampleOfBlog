@@ -4,7 +4,9 @@
 }
 <div class="jumbotron"> Yeni Bir Post Eklemek İçin  @Html.ActionLink("Tıklayınız","AddPost")
     </div>
+<div class="jumbotron"> Yeni Bir Kategori Eklemek için @Html.ActionLink("Tıklayınız","AddCategory")</div>
 
+<div class="jumbotron">Yeni Bir Etiketik Eklemek İçin @Html.ActionLink("Tıklayınız","AddTag")</div>
 <div class="panel panel-primary">
     <div class="panel panel-body">
         <table class="table table-hover">
@@ -27,7 +29,7 @@
                     <td>@item.TitleDescription</td>
                     <td>@item.AppUser</td>
                     <td>@Html.ActionLink("Posta Git", "GoToPost", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
-                     
+                    <td>@Html.ActionLink("Posta Etiket Ekle","AddPostTag",new {id = item.ID },new { @class ="btn btn-warning" })</td>
                     
                 </tr>
             }
