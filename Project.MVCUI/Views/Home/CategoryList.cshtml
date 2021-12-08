@@ -1,17 +1,17 @@
-@model PostVM
+﻿@model CategoryVM
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "CategoryList";
 }
 
 <ul class="post-flow-wrapper">
     <li class="post-main">
-         
-        @foreach (Post item in Model.Posts.OrderByDescending(x=> x.ID))
+
+        @foreach (Post item in Model.Posts.OrderByDescending(x => x.ID))
         {
             <div class="post">
                 <div class="post-thumbnail">
                     <a href="#">
-                        <img src="@Url.Content(item.ImagePath)" alt="Resim Yok"  />
+                        <img src="@Url.Content(item.ImagePath)" alt="Resim Yok" />
                     </a>
                 </div>
 
@@ -47,4 +47,3 @@
 
     </li>
 </ul>
-

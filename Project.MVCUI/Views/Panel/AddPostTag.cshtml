@@ -1,0 +1,26 @@
+﻿@model PostTagVM
+@{
+    ViewBag.Title = "AddPostTag";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x=> x.postInstance.ID)
+
+    <div class="panel panel-body">
+        <div class="panel panel-primary">
+            @foreach (Tag item in Model.Tags)
+            {
+                <input type="checkbox" value="@item.ID"
+                       name="checkbox" /> @item.TagName
+            }
+        </div>
+    </div>
+    
+
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}

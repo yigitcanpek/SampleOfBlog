@@ -43,8 +43,11 @@
   <ItemGroup>
     <Compile Include="Models\Entities\AppUser.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
+    <Compile Include="Models\Entities\Category.cs" />
     <Compile Include="Models\Entities\Post.cs" />
+    <Compile Include="Models\Entities\PostTag.cs" />
     <Compile Include="Models\Entities\Suspect.cs" />
+    <Compile Include="Models\Entities\Tag.cs" />
     <Compile Include="Models\Enums\DataStatus.cs" />
     <Compile Include="Models\Enums\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

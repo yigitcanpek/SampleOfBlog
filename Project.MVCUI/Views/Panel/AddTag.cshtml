@@ -1,0 +1,21 @@
+﻿@model TagVM
+@{
+    ViewBag.Title = "AddTag";
+}
+
+@using (Html.BeginForm("AddTag", "Panel", FormMethod.Post, new {enctype="multipart/formdata" }))
+{
+    <div>
+        @Html.TextBoxFor(x => x.TagInstance.TagName, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.TagInstance.TagDescription, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <button class="btn btn-primary">
+            Ekle
+        </button>
+    </div>
+}
+

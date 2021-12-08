@@ -15,6 +15,10 @@ namespace Project.ENTITIES.Models.Entities
         public string ImagePath { get; set; }
         //Relational Properties
         public int? AppUserID { get; set; }
-        public AppUser AppUser { get; set; }
+        public int? CategoryID { get; set; }
+
+        public virtual Category Category { get; set; }
+        public virtual AppUser AppUser { get; set; }
+        public virtual List<PostTag> PostTags { get; set; }
     }
 }

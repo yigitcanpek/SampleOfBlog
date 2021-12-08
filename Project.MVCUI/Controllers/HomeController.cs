@@ -10,33 +10,32 @@ namespace Project.MVCUI.Controllers
 {
     public class HomeController : Controller
     {
-        PostRepository _postrep;
+        PostRepository _postRep;
+        CategoryRepository _categoryRep;
         public HomeController()
         {
-            _postrep = new PostRepository();
+            _postRep = new PostRepository();
+            _categoryRep = new CategoryRepository();
         }
         public ActionResult Index()
         {
             PostVM pvm = new PostVM()
             {
-                Posts = _postrep.GetActives()
+                Posts = _postRep.GetActives()
+                
             };
             return View(pvm);
         }
    
 
-        public ActionResult About()
+        public ActionResult CategoryList(int id)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            CategoryVM cvm = new CategoryVM()
+            {
+                CategoryInstance = _categoryRep.Find(id),
+                Posts = _postRep.Where(x=> x.CategoryID == id)
+            };
+            return View(cvm);
         }
     }
 }
