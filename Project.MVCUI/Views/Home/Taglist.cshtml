@@ -1,0 +1,143 @@
+﻿@model  TagVM
+@{
+    ViewBag.Title = "Taglist";
+}
+<div class="col-md-9  flow-div">
+    <ul class="post-flow-wrapper">
+        <li class="post-main">
+
+            @foreach (PostTag item in Model.TagInstance.PostTags.OrderByDescending(x => x.ID))
+            {
+
+                <div class="post">
+                    <div class="post-thumbnail">
+                        <a href="#">
+                            <img src="@Url.Content(item.Post.ImagePath)" alt="Resim Yok" />
+                        </a>
+                    </div>
+
+                    <div class="post-details">
+                        <header class="post-header">
+                            <h3 class="post-title">
+                                <a href="">@Html.ActionLink(item.Post.Title, "GoToPostIndex", new { id = item.PostID })</a>
+                            </h3>
+                        </header>
+                        <div class="post-text">
+                            <p>
+                                @item.Post.TitleDescription
+                            </p>
+                        </div>
+                        <div class="post-last-details">
+                            <div class="post-send-time">
+                                <i class="far fa-calendar-alt">
+                                    @item.Post.CreatedDate
+                                </i>
+                            </div>
+                            <div class="post-category">
+                                <i class="far fa-folder">
+                                    <a>@Html.ActionLink(@item.Post.Category.CategoryName, "CategoryList", new { id = item.Post.Category.ID })</a>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+
+        </li>
+    </ul>
+</div>
+            <div class="col-md-3  right-widgets">
+
+                <div class="search-bar">
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+                    {
+                        @Html.TextBox("searching")<input class="col-md-8" type="submit" value="Search" placeholder="Search site..." />
+
+                    }
+                </div>
+
+                <div class="about-widget">
+                    <div class="about-me">
+                        <img src="https://via.placeholder.com/180x90" />
+                        <h3>Hakkımda</h3>
+                        <p>
+                            Sorunlar karşısında çözüm üretme yeteneğime güvenerek devam ettiğim iş hayatımda; bilişim alanında da profesyonel, gerekli iş prensiplerine sahip bir yazılım geliştirici olmak için çalışmalarımı sürdürüyorum. Alanım olan uzman sistemler ve müşteri ilişkileri yönetimi konusunda kendimi geliştirmeye; bu alanda algoritma, program ve çözüm yöntemlerini etkin bir şekilde üretmeye devam ediyorum.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="social-widget">
+                    <h3>Beni Takip Et!</h3>
+                    <div class="social-container">
+                        <a class=" btn btn-primary btn-lg btn-floating"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a class=" btn btn-primary btn-lg btn-floating"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a class="  btn btn-primary btn-lg btn-floating"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a class=" btn btn-primary btn-lg btn-floating"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="latest-widget">
+                    <h3>Latest Posts</h3>
+                    <ul>
+                        @{int count = 0;}
+                        @foreach (Post item in Model.Posts.OrderByDescending(x => x.ID))
+                        {
+
+                            count++;
+
+                            <li><a>@Html.ActionLink(item.Title, "GoToPostIndex", new { id = item.ID }) </a></li>
+                            if (count >= 5)
+                            {
+                                break;
+                            }
+                        }
+
+
+                    </ul>
+                </div>
+
+                <div class="categories-widget">
+                    <h3>Categories</h3>
+                    <ul>
+                        @foreach (Category item in Model.Categories)
+                        {
+                            <li><a> @Html.ActionLink(item.CategoryName, "CategoryList", new { id = item.ID })</a></li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="tag-widget">
+                    <h3>Tags</h3>
+                    <div class="tag-cloud">
+                        @foreach (Tag item in Model.Tags)
+                        {
+                            @Html.ActionLink(item.TagName, "TagList", new { id = item.ID })
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+
+

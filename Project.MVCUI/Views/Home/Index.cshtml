@@ -2,13 +2,13 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<div class="col-md-9  flow-div">
+    <ul class="post-flow-wrapper">
+        <li class="post-main">
 
-<ul class="post-flow-wrapper">
-    <li class="post-main">
+            @foreach (Post item in Model.Posts.OrderByDescending(x => x.ID))
+            {
 
-        @foreach (Post item in Model.Posts.OrderByDescending(x => x.ID))
-        {
-            <div class="col-md-9  flow-div">
                 <div class="post">
                     <div class="post-thumbnail">
                         <a href="#">
@@ -19,7 +19,7 @@
                     <div class="post-details">
                         <header class="post-header">
                             <h3 class="post-title">
-                                <a href="">@item.Title</a>
+                                <a href="">@Html.ActionLink(@item.Title,"GoToPostIndex",new {id=item.ID })</a>
                             </h3>
                         </header>
                         <div class="post-text">
@@ -42,94 +42,97 @@
                     </div>
 
                 </div>
-            </div>
-                }
+
+            }
 
         </li>
-</ul>
-
-<div class="col-md-3  right-widgets">
-
-    <div class="search-bar">
-        <form>
-            <input class="col-md-8" type="search" placeholder="Search site..." />
-            <button class="col-md-4" type="submit">Ara</button>
-        </form>
-    </div>
-
-    <div class="about-widget">
-        <div class="about-me">
-            <img src="https://via.placeholder.com/180x90" />
-            <h3>Hakkýmda</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin, ipsum in molestie ultrices, lacus ipsum in molestie ultrices, lacus..
-            </p>
-        </div>
-    </div>
-
-    <div class="social-widget">
-        <h3>Beni Takip Et!</h3>
-        <div class="social-container">
-            <a class=" btn btn-primary btn-lg btn-floating"
-               href="#!"
-               role="button">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a class=" btn btn-primary btn-lg btn-floating"
-               href="#!"
-               role="button">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-
-            <a class="  btn btn-primary btn-lg btn-floating"
-               href="#!"
-               role="button">
-                <i class="fab fa-github"></i>
-            </a>
-
-            <a class=" btn btn-primary btn-lg btn-floating"
-               href="#!"
-               role="button">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </div>
-    </div>
-
-    <div class="latest-widget">
-        <h3>Latest Posts</h3>
-        <ul>
-            <li><a href="#">Why You're </a></li>
-            <li><a href="#">Where to Find Guest Blogging Opportunities on Web 3.0 </a></li>
-            <li><a href="#">8How to Explain Web 3.0 to Your Mom</a></li>
-            <li><a href="#">20 Fun Facts About Web 3.0</a></li>
-            <li><a href="#">910 Things You Learned in Kindergarden That'll Help You With Web 3.0</a></li>
-        </ul>
-    </div>
-
-    <div class="categories-widget">
-        <h3>Categories</h3>
-        <ul>
-            <li><a href="#">General </a> <span>(0)</span></li>
-            <li><a href="#">Software</a> <span>(0)</span></li>
-            <li><a href="#">Crypto Currencies</a> <span>(0)</span></li>
-            <li><a href="#">Science</a> <span>(0)</span></li>
-            <li><a href="#">Random </a> <span>(0)</span></li>
-        </ul>
-    </div>
-
-    <div class="tag-widget">
-        <h3>Tags</h3>
-        <div class="tag-cloud">
-            <a href="#">design</a>
-            <a href="#">music</a>
-            <a href="#">crypto</a>
-            <a href="#">news</a>
-            <a href="#">fun</a>
-            <a href="#">game</a>
-            <a href="#">random</a>
-        </div>
-    </div>
-
+    </ul>
 </div>
+    <div class="col-md-3  right-widgets">
+
+        <div class="search-bar">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get)) { 
+                @Html.TextBox("searching")<input class="col-md-8" type="submit" value="Search" placeholder="Search site..." />
+                
+            }
+        </div>
+
+        <div class="about-widget">
+            <div class="about-me">
+                <img src="https://via.placeholder.com/180x90" />
+                <h3>Hakkýmda</h3>
+                <p>
+                    Sorunlar karþýsýnda çözüm üretme yeteneðime güvenerek devam ettiðim iþ hayatýmda; biliþim alanýnda da profesyonel, gerekli iþ prensiplerine sahip bir yazýlým geliþtirici olmak için çalýþmalarýmý sürdürüyorum. Alaným olan uzman sistemler ve müþteri iliþkileri yönetimi konusunda kendimi geliþtirmeye; bu alanda algoritma, program ve çözüm yöntemlerini etkin bir þekilde üretmeye devam ediyorum.
+                </p>
+            </div>
+        </div>
+
+        <div class="social-widget">
+            <h3>Beni Takip Et!</h3>
+            <div class="social-container">
+                <a class=" btn btn-primary btn-lg btn-floating"
+                   href="#!"
+                   role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a class=" btn btn-primary btn-lg btn-floating"
+                   href="#!"
+                   role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a class="  btn btn-primary btn-lg btn-floating"
+                   href="#!"
+                   role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a class=" btn btn-primary btn-lg btn-floating"
+                   href="#!"
+                   role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="latest-widget">
+            <h3>Latest Posts</h3>
+            <ul>
+                @{int count = 0;}
+                @foreach (Post item in Model.Posts.OrderByDescending(x => x.ID))
+                {
+
+                    count++;
+
+                    <li><a>@Html.ActionLink(item.Title, "GoToPostIndex", new { id = item.ID }) </a></li>
+                    if (count >= 5)
+                    {
+                        break;
+                    }
+                }
+            </ul>
+        </div>
+
+        <div class="categories-widget">
+            <h3>Categories</h3>
+            <ul>  
+                    @foreach (Category item in Model.Categories)
+                    {
+                <li><a> @Html.ActionLink(item.CategoryName, "CategoryList", new { id = item.ID })</a></li>
+                    }
+            </ul>
+        </div>
+
+        <div class="tag-widget">
+            <h3>Tags</h3>
+            <div class="tag-cloud">
+                @foreach (Tag item in Model.Tags)
+                {
+                    @Html.ActionLink(item.TagName, "TagList", new { id = item.ID })
+                }
+            </div>
+        </div>
+
+    </div>
 

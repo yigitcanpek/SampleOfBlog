@@ -15,7 +15,9 @@ namespace Project.MVCUI.ViewModels
         
         public List<Category> Categories { get; set; }
         public List<PostTag> PostTags { get; set; }
-        
+        public List<Tag> Tags { get; set; }
+
+
 
 
 

@@ -33,7 +33,6 @@ namespace Project.MVCUI.Controllers
                 if (ap.UserRole == Project.ENTITIES.Models.Enums.UserRole.Admin)
                 {
                     Session["admin"] = ap;
-                    //Session["AdminName"] = ap.Name;
                     return RedirectToAction("AdminPanel", "Panel");
                 }
                 ViewBag.Message = "Yetkiniz Admin Değil";

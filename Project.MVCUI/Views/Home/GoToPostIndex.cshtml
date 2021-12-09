@@ -1,0 +1,17 @@
+﻿@model PostVM
+@{
+    ViewBag.Title = "GoToPostIndex";
+}
+
+<div class="text-center">@Model.PostInstance.Title</div>
+<div class="text-lowercase">@Model.PostInstance.Description</div>
+<div>
+    @if (Model.PostInstance.PostTags != null)
+    {
+        foreach (PostTag item in Model.PostInstance.PostTags)
+        {
+            @Html.ActionLink(item.Tag.TagName, "TagList", new { id = item.TagID })
+        }
+    }
+</div>
+

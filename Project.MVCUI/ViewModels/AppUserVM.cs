@@ -10,15 +10,5 @@ namespace Project.MVCUI.ViewModels
 {
     public class AppUserVM
     {
-        public AppUser AppUser { get; set; }
-        public List<AppUser> AppUsers { get; set; }
-
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public UserRole UserRole { get; set; }
-        
-        public List<Post> Posts { get; set; }
-
-
     }
 }

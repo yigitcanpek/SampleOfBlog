@@ -54,6 +54,9 @@ body {
 }
 
 /*--------- Post Flow ---------*/
+.post {
+    margin-bottom: 50px;
+}
 .post-main{
     list-style:none;
 }
