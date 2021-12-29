@@ -3,26 +3,26 @@
     ViewBag.Title = "GoToPostIndex";
 }
 
-<div class="text-center">@Model.PostInstance.Title</div>
-<div class="text-lowercase">@Model.PostInstance.Description</div>
+<div class="text-center"></div>
+<div class="text-lowercase"></div>
 
 <div class="post-wrap">
     <div class="container">
         <div class="row">
             <div class="post-inside">
                 <div class="in-post-img">
-                    <img src="https://picsum.photos/1100/500" /> <!-- Post Resmi -->
+                    <img src="@Model.PostInstance.ImagePath" /> <!-- Post Resmi -->
                 </div>
                 <div class="in-post-content">
-                    <h2>Its a Title ma dude</h2> <!-- Post başlığı -->
-                    <p>There ya go a big</p>    <!-- Post içeriği -->
+                    <h2>@Model.PostInstance.Title</h2> <!-- Post başlığı -->
+                    <p>@Model.PostInstance.Description</p>    <!-- Post içeriği -->
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div>
+<div  class="tag-cloud">
          @if (Model.PostInstance.PostTags != null)
         {
             foreach (PostTag item in Model.PostInstance.PostTags)

@@ -4,7 +4,7 @@
 }
 <div class="introduce-container">
     <h3>Kiþisel Bloðum</h3>
-    <p>Our everyday thoughts are presented here Music, video presentations, photo-shootings and more.</p>
+    <p>Dijital arþivimdir çoðaltýlýp daðýtýlmasýnda hiçbir sakýnca yoktur.</p>
 </div>
 <div class="col-md-9  flow-div">
     <ul class="post-flow-wrapper">
@@ -56,14 +56,14 @@
 
         <div class="search-bar">
             @using (Html.BeginForm("Index", "Home", FormMethod.Get)) { 
-                @Html.TextBox("searching")<input class="col-md-8" type="submit" value="Search" placeholder="Search site..." />
-                
+                @Html.TextBox("searching")
+                <button class="col-md-4" type="submit" value="Search">Ara</button>                          
             }
         </div>
 
         <div class="about-widget">
             <div class="about-me">
-                <img src="https://via.placeholder.com/180x90" />
+                
                 <h3>Hakkýmda</h3>
                 <p>
                     Sorunlar karþýsýnda çözüm üretme yeteneðime güvenerek devam ettiðim iþ hayatýmda; biliþim alanýnda da profesyonel, gerekli iþ prensiplerine sahip bir yazýlým geliþtirici olmak için çalýþmalarýmý sürdürüyorum. Alaným olan uzman sistemler ve müþteri iliþkileri yönetimi konusunda kendimi geliþtirmeye; bu alanda algoritma, program ve çözüm yöntemlerini etkin bir þekilde üretmeye devam ediyorum.
@@ -74,29 +74,21 @@
         <div class="social-widget">
             <h3>Beni Takip Et!</h3>
             <div class="social-container">
-                <a class=" btn btn-primary btn-lg btn-floating"
-                   href="#!"
-                   role="button">
-                    <i class="fab fa-instagram"></i>
-                </a>
+               
 
                 <a class=" btn btn-primary btn-lg btn-floating"
-                   href="#!"
+                   href="https://www.linkedin.com/in/yigitcanpek/"
                    role="button">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
 
                 <a class="  btn btn-primary btn-lg btn-floating"
-                   href="#!"
+                   href="https://github.com/yigitcanpek"
                    role="button">
                     <i class="fab fa-github"></i>
                 </a>
 
-                <a class=" btn btn-primary btn-lg btn-floating"
-                   href="#!"
-                   role="button">
-                    <i class="fab fa-twitter"></i>
-                </a>
+                
             </div>
         </div>
 

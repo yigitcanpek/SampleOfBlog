@@ -10,5 +10,8 @@ namespace Project.MVCUI.ViewModels
 {
     public class AppUserVM
     {
+        public AppUser AppUser { get; set; }
+       
+
     }
 }

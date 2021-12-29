@@ -53,14 +53,13 @@
                 <div class="search-bar">
                     @using (Html.BeginForm("Index", "Home", FormMethod.Get))
                     {
-                        @Html.TextBox("searching")<input class="col-md-8" type="submit" value="Search" placeholder="Search site..." />
-
+                        @Html.TextBox("searching")
+                        <button class="col-md-4" type="submit" value="Search">Ara</button>
                     }
                 </div>
 
                 <div class="about-widget">
                     <div class="about-me">
-                        <img src="https://via.placeholder.com/180x90" />
                         <h3>Hakkımda</h3>
                         <p>
                             Sorunlar karşısında çözüm üretme yeteneğime güvenerek devam ettiğim iş hayatımda; bilişim alanında da profesyonel, gerekli iş prensiplerine sahip bir yazılım geliştirici olmak için çalışmalarımı sürdürüyorum. Alanım olan uzman sistemler ve müşteri ilişkileri yönetimi konusunda kendimi geliştirmeye; bu alanda algoritma, program ve çözüm yöntemlerini etkin bir şekilde üretmeye devam ediyorum.
@@ -72,27 +71,15 @@
                     <h3>Beni Takip Et!</h3>
                     <div class="social-container">
                         <a class=" btn btn-primary btn-lg btn-floating"
-                           href="#!"
-                           role="button">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-                        <a class=" btn btn-primary btn-lg btn-floating"
-                           href="#!"
+                           href="https://www.linkedin.com/in/yigitcanpek/"
                            role="button">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
 
                         <a class="  btn btn-primary btn-lg btn-floating"
-                           href="#!"
+                           href="https://github.com/yigitcanpek"
                            role="button">
                             <i class="fab fa-github"></i>
-                        </a>
-
-                        <a class=" btn btn-primary btn-lg btn-floating"
-                           href="#!"
-                           role="button">
-                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
