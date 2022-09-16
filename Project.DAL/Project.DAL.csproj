@@ -60,7 +60,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Project.ENTITIES\Project.ENTITIES.csproj">
       <Project>{8DE0B2AE-4977-4AF8-882F-133F82889C88}</Project>

@@ -19,6 +19,7 @@ namespace Project.DAL.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            
             modelBuilder.Configurations.Add(new SuspectMap());
             modelBuilder.Configurations.Add(new PostMap());
             modelBuilder.Configurations.Add(new AppUserMap());

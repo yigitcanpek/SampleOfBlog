@@ -24,21 +24,21 @@
             </thead>
 
             <tbody>
-                @foreach(Post item in Model.Posts)
-            {
-                <tr>
-                    
-                    <td>@item.Title</td>
-                    <td>@item.TitleDescription</td>
-                    <td>@item.AppUser</td>
-                    <td>@Html.ActionLink("Posta Git", "GoToPost", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
-                    <td>@Html.ActionLink("Posta Etiket Ekle","AddPostTag",new {id = item.ID },new { @class ="btn btn-warning" })</td>
-                    
-                </tr>
-            }
-            </tbody>
+                @foreach (Post item in Model.Posts)
+                {
+                    <tr>
 
+                        <td>@item.Title</td>
+                        <td>@item.TitleDescription</td>
+                        <td>@item.AppUser</td>
+                        <td>@Html.ActionLink("Posta Git", "GoToPost", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                        <td>@Html.ActionLink("Posta Etiket Ekle", "AddPostTag", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                    </tr>
+                }
+            </tbody>
         </table>
+
     </div>
 </div>
 

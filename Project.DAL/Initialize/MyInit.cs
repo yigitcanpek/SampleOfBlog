@@ -11,29 +11,18 @@ namespace Project.DAL.Initialize
 {
     public class MyInit: CreateDatabaseIfNotExists<MyContext>
     {
-        public override void InitializeDatabase(MyContext context)
+        protected override void Seed(MyContext context)
         {
-            AppUser kadir = new AppUser
-            {
-                UserName = "Legolas",
-                Name = "Kadir",
-                Surname = "Şöför",
-                Password = "Arwen34",
-                UserRole = Project.ENTITIES.Models.Enums.UserRole.Admin
-            };
 
-            AppUser yigit = new AppUser
+            AppUser ap = new AppUser()
             {
-                UserName = "Gimli",
-                Name = "Yiğit Can",
-                Surname = "Pekgüzel",
-                Password = "Arwen44",
+                UserName = "YigitCanAdmin",
+                Password = "KadireSormanYeter",
                 UserRole = Project.ENTITIES.Models.Enums.UserRole.Admin
+
             };
-            context.AppUsers.Add(kadir);
-            context.AppUsers.Add(yigit);
+            context.AppUsers.Add(ap);
             context.SaveChanges();
         }
-        
     }
 }

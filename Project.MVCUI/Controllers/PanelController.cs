@@ -32,12 +32,15 @@ namespace Project.MVCUI.Controllers
             PostVM pvm = new PostVM()
             {
                 Posts = _postRep.GetActives(),
-                Categories = _categoryRep.GetActives()
+                Categories = _categoryRep.GetActives(),
+                Tags = _tagRep.GetActives()
+                
             };
             
             return View(pvm);
         }
 
+  
         [AdminAuthentication]
         public ActionResult AddCategory()
         {
