@@ -3,21 +3,28 @@
     ViewBag.Title = "UpdatePost";
 }
 
-@using (Html.BeginForm())
- {
-     @Html.HiddenFor(x=> x.PostInstance.ID)
+@using (Html.BeginForm("UpdatePost", "Panel", FormMethod.Post, new {enctype="multipart/form-data"}))
+{
+    @Html.HiddenFor(x => x.PostInstance.ID)
     <div>
-        @Html.TextBoxFor(x=> x.PostInstance.Title,new {@class = "form-control"})
+        @Html.TextBoxFor(x => x.PostInstance.Title, new { @class = "form-control" })
     </div>
     <div>
-        @Html.TextBoxFor(x=> x.PostInstance.TitleDescription, new {@class ="form-control"})
+        @Html.TextBoxFor(x => x.PostInstance.TitleDescription, new { @class = "form-control" })
     </div>
 
-    <div>@Html.TextBoxFor(x=> x.PostInstance.Description,new {@class ="form-control" })
+    <div>
+        @Html.TextBoxFor(x => x.PostInstance.Description, new { @class = "form-control" })
+</div>
+    <div>
+            @Html.DropDownListFor(x => x.PostInstance.CategoryID, new SelectList(Model.Categories, "ID", "CategoryName"), "Lutfen seciniz", new { @class = "form-control" })        
     </div>
-    <button class="btn btn-primary">
-        güncelle
-    </button>
- }
+    <div>
+        <input type="file" name="image" value="" />
+    </div>
+<button class="btn btn-primary">
+    güncelle
+</button>
+}
 
 

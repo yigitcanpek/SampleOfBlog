@@ -116,9 +116,10 @@ namespace Project.BLL.DesignPatterns.Repository.BaseRep
         public void Update(T item)
         {
 
-            T toBeUpdated = Find(item.ID);
+            
             item.Status = ENTITIES.Models.Enums.DataStatus.Updated;
             item.ModifiedDate = DateTime.Now;
+            T toBeUpdated = Find(item.ID);
             _db.Entry(toBeUpdated).CurrentValues.SetValues(item);
             Save();
         }

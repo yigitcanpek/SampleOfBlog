@@ -1,0 +1,24 @@
+﻿@model CategoryVM
+@{
+    ViewBag.Title = "UpdateCategory";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x=> x.CategoryInstance.ID)
+<div>
+    @Html.TextBoxFor(x => x.CategoryInstance.CategoryName)
+</div>
+<div>
+    @Html.TextBoxFor(x => x.CategoryInstance.CategoryDescription)
+</div>
+
+
+
+<div>
+    @Html.ActionLink("Sil", "DeleteCategory", new { id = Model.CategoryInstance.ID }, new { @class = "btn btn-warning" })
+</div>
+<div > <button class="btn btn-primary" type="submit">Güncelle</button></div>
+
+}
+

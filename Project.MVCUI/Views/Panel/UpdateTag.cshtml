@@ -1,0 +1,19 @@
+﻿@model TagVM
+@{
+    ViewBag.Title = "UpdateTag";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x=> x.TagInstance.ID)
+<div>
+    @Html.TextBoxFor(x => x.TagInstance.TagName)
+</div>
+<div>
+    @Html.TextBoxFor(x => x.TagInstance.TagDescription)
+</div>
+<div>
+    @Html.ActionLink("Sil", "DeleteTag", new { id = Model.TagInstance.ID }, new { @class = "btn btn-warning" })
+</div>
+ <button class="btn btn-primary"> Güncelle</button>
+}

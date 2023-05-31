@@ -82,6 +82,25 @@ namespace Project.MVCUI.Controllers
             return View(pvm);
         }
         [AdminAuthentication]
+        public ActionResult UpdateCategory(int id)
+        {
+            CategoryVM cvm = new CategoryVM()
+            {
+                CategoryInstance = _categoryRep.Find(id)
+            };
+            return View(cvm);
+        }
+        [AdminAuthentication]
+        public ActionResult UpdateTag(int id)
+        {
+            TagVM tvm = new TagVM()
+            {
+                TagInstance = _tagRep.Find(id)
+            };
+            return View(tvm);
+        }
+
+        [AdminAuthentication]
         public ActionResult AddPost()
         {
             PostVM pvm = new PostVM()
@@ -144,28 +163,66 @@ namespace Project.MVCUI.Controllers
         [AdminAuthentication]
         public ActionResult DeletePost (int id)
         {
-            _postRep.Destroy(_postRep.Find(id));
+            _postRep.Delete(_postRep.Find(id));
             return RedirectToAction("AdminPanel");
         }
-
-       public ActionResult UpdatePost(int id )
+        [AdminAuthentication]
+        public ActionResult UpdatePost(int id )
         {
             PostVM pvm = new PostVM()
             {
+                Categories = _categoryRep.GetActives(),
                 PostInstance = _postRep.Find(id)
             };
             return View(pvm);
         }
-        
+        [AdminAuthentication]
+        [HttpPost]
+        public ActionResult UpdateCategory(Category categoryInstance)
+        {
+            _categoryRep.Update(categoryInstance);
+            return RedirectToAction("AdminPanel");
+        }
+        [AdminAuthentication]
+        [HttpPost]
+        public ActionResult UpdateTag(Tag tagInstance)
+        {
+            _tagRep.Update(tagInstance);
+            return RedirectToAction("AdminPanel");
+        }
+
         [AdminAuthentication]
         [HttpPost]
         public ActionResult UpdatePost (Post postInstance)
         {
+
+            if (Request.Files.Count > 0)
+            {
+                string filename = Path.GetFileName(Request.Files[0].FileName);
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string path = "~/Images/" + filename + extension;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                postInstance.ImagePath = "/Images/" + filename + extension;
+            }
+
             _postRep.Update(postInstance);
             return RedirectToAction("AdminPanel");
         }
 
-      
+        [AdminAuthentication]
+        
+        public ActionResult DeleteCategory(int id)
+        {
+            _categoryRep.Delete(_categoryRep.Find(id));
+            return RedirectToAction("AdminPanel");
+        }
+        [AdminAuthentication]
+        
+        public ActionResult DeleteTag(int id)
+        {
+            _tagRep.Delete(_tagRep.Find(id));
+            return RedirectToAction("AdminPanel");
+        }
 
     }
 }

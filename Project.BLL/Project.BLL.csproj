@@ -71,6 +71,10 @@
       <Project>{8DE0B2AE-4977-4AF8-882F-133F82889C88}</Project>
       <Name>Project.ENTITIES</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Project.MAP\Project.MAP.csproj">
+      <Project>{64d7926a-d14e-4795-8153-2ee9a7ee6936}</Project>
+      <Name>Project.MAP</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

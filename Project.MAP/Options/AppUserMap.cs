@@ -11,7 +11,7 @@ namespace Project.MAP.Options
     {
         public AppUserMap()
         {
-
+           
         }
     }
 }

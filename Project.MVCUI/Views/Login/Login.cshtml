@@ -9,7 +9,8 @@
     <div class="panel panel-body">
         @using (Html.BeginForm())
         {
-                <div>@Html.TextBoxFor(x => x.AppUser.UserName, new { placeholder = "kullanıcı adını giriniz", @class = "form-control" })</div>
+                
+            <div>@Html.TextBoxFor(x => x.AppUser.UserName, new { placeholder = "kullanıcı adını giriniz", @class = "form-control" })</div>
                 <div>@Html.PasswordFor(x => x.AppUser.Password, new { placeholder = "Sifre giriniz",@class ="form control"})</div>
                 <div>
                     <button class="btn btn-primary">

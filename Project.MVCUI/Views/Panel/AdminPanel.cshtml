@@ -3,14 +3,14 @@
     ViewBag.Title = "AdminPanel";
 }
 
-    <div class="btn btn-default">
+    <div class="btn btn-success">
         Yeni Bir Post Eklemek İçin  @Html.ActionLink("Tıklayınız", "AddPost")
     </div>
-    <div class="btn btn-default"> Yeni Bir Kategori Eklemek için @Html.ActionLink("Tıklayınız", "AddCategory")</div>
+    <div class="btn btn-success"> Yeni Bir Kategori Eklemek için @Html.ActionLink("Tıklayınız", "AddCategory")</div>
 
-    <div class="btn btn-default">Yeni Bir Etiketik Eklemek İçin @Html.ActionLink("Tıklayınız", "AddTag")</div>
+    <div class="btn btn-success">Yeni Bir Etiketik Eklemek İçin @Html.ActionLink("Tıklayınız", "AddTag")</div>
     
-<div class="panel panel-primary">
+<div id='div1'style="display:block" class="panel panel-primary">
     <div class="panel panel-body">
         <table class="table table-hover">
             <thead>
@@ -22,23 +22,118 @@
                     <th colspan="2" style="padding-left:100px">Islemler</th>
                 </tr>
             </thead>
+            
+            <tbody>
+                @if (Model.Posts != null)
+                {
+                    foreach (Post item in Model.Posts)
+                    {
+                        <tr>
+                            <td><img height="40px" width="40px" src="@Url.Content(item.ImagePath)" alt="Resim Yok" /></td>
+                            <td>@item.Title</td>
+                            <td>@item.TitleDescription</td>
+                            <td>@item.AppUser</td>
+                            <td>@Html.ActionLink("Posta Git", "GoToPost", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                            <td>@Html.ActionLink("Posta Etiket Ekle", "AddPostTag", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                            <td>@Html.ActionLink("Postu Sil", "DeletePost", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                        </tr>
+                    }
+                }
+                </tbody>
+                
+
+        </table>
+
+    </div>
+</div>
+
+<div id='div2' style="display:none" class="panel panel-primary">
+    <div class="panel panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Kategori İsmi</th>
+                    <th>Kategori Açıklaması</th>
+                    <th colspan="2" style="padding-left:100px">Islemler</th>
+                </tr>
+            </thead>
 
             <tbody>
-                @foreach (Post item in Model.Posts)
-                {
-                    <tr>
+                @if (@Model.Categories != null)
+                    {
+                    foreach (Category item in Model.Categories)
+                    {
+                        <tr>
+                            
+                            <td>@item.CategoryName</td>
+                            <td>@item.CategoryDescription</td>
+                            <td>@Html.ActionLink("Kategoriye Git", "UpdateCategory", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                            <td>@Html.ActionLink("Kategoriyi Sil", "DeleteCategory", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                        </tr>
+                    }
 
-                        <td>@item.Title</td>
-                        <td>@item.TitleDescription</td>
-                        <td>@item.AppUser</td>
-                        <td>@Html.ActionLink("Posta Git", "GoToPost", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
-                        <td>@Html.ActionLink("Posta Etiket Ekle", "AddPostTag", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
-
-                    </tr>
                 }
+
             </tbody>
         </table>
 
     </div>
 </div>
 
+<div id='div3' style="display:none" class="panel panel-primary">
+    <div class="panel panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Etiket İsmi</th>
+                    <th>Etiket Açıklaması</th>
+                    <th colspan="2" style="padding-left:100px">Islemler</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model.Tags != null)
+                {
+                    foreach (Tag item in Model.Tags)
+                    {
+                        <tr>
+
+                            <td>@item.TagName</td>
+                            <td>@item.TagDescription</td>
+                            <td>@Html.ActionLink("Etikete Git", "UpdateTag", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                            <td>@Html.ActionLink("Etiketi Sil", "DeleteTag", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                        </tr>
+                    }
+
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<button style="background-color:bisque" onclick="handleDiv1()">Gönderileri Getir</button>
+<button style="background-color:burlywood" onclick="handleDiv2()">Kategorileri Getir</button>
+<button style="background-color:coral" onclick="handleDiv3()">Etiketleri Getir</button>
+
+<script>
+    const handleDiv1 = () => {
+        document.getElementById("div1").style.display = "block";
+        document.getElementById("div2").style.display = "none";
+        document.getElementById("div3").style.display = "none";
+    }
+
+    const handleDiv2 = () => {
+        document.getElementById("div1").style.display = "none";
+        document.getElementById("div2").style.display = "block";
+        document.getElementById("div3").style.display = "none";
+    }
+
+    const handleDiv3 = () => {
+        document.getElementById("div1").style.display = "none";
+        document.getElementById("div2").style.display = "none";
+        document.getElementById("div3").style.display = "block";
+    }
+</script>

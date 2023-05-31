@@ -220,6 +220,8 @@
     <Content Include="Views\Home\CategoryList.cshtml" />
     <Content Include="Views\Home\GoToPostIndex.cshtml" />
     <Content Include="Views\Home\Taglist.cshtml" />
+    <Content Include="Views\Panel\UpdateCategory.cshtml" />
+    <Content Include="Views\Panel\UpdateTag.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

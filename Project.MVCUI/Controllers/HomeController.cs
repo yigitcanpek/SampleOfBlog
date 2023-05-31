@@ -27,7 +27,7 @@ namespace Project.MVCUI.Controllers
            
             PostVM pvm = new PostVM()
             {
-                Posts = _postRep.Where(x=> x.Title.Contains(searching) || searching == null),
+                Posts = _postRep.Where(x=> x.Title.Contains(searching) || searching == null && x.Status != ENTITIES.Models.Enums.DataStatus.Deleted),
                 Tags = _tagRep.GetActives(),
                 Categories = _categoryRep.GetActives(),
             };
